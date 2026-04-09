@@ -416,28 +416,5 @@
   <a href="https://docs.google.com/forms/d/e/1FAIpQLSd8s9yt_YfatYZGfHjIQU8epMqm4P4M28pkm9Svyz7DSXfIEw/viewform?usp=publish-editor" class="btn btn-primary" target="_blank" rel="noopener">Get in Touch</a>
 </div>
 
-<!-- QR CODE -->
-<div class="qr-section" id="qr">
-  <h2>Scan to Visit</h2>
-  <p class="pricing-intro">Share this QR code on business cards, flyers, or anywhere — it links straight to this site.</p>
-  <div class="qr-wrap">
-    <canvas id="qr-canvas"></canvas>
-  </div>
-  <br>
-  <p class="qr-label">masterbluesama.github.io/samastylemedia</p>
-</div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-<script>
-  new QRCode(document.getElementById("qr-canvas"), {
-    text: "https://masterbluesama.github.io/samastylemedia/",
-    width: 200,
-    height: 200,
-    colorDark: "#000000",
-    colorLight: "#ffffff",
-    correctLevel: QRCode.CorrectLevel.H
-  });
-</script>
-
 <footer>
   &copy; 2026 SAMA Style Media. All

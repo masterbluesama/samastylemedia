@@ -1,11 +1,12 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SAMA Style Media</title>
+
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Syne:wght@400;600;800&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --bg: #080808;
@@ -22,9 +23,7 @@
       box-sizing: border-box;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       background: var(--bg);
@@ -39,12 +38,11 @@
       color: inherit;
     }
 
-    /* ── NAV ── */
+    /* NAV */
     nav {
       position: fixed;
       top: 0;
-      left: 0;
-      right: 0;
+      width: 100%;
       z-index: 100;
       display: flex;
       justify-content: space-between;
@@ -82,7 +80,7 @@
       color: var(--accent);
     }
 
-    /* ── HERO ── */
+    /* HERO */
     .hero {
       min-height: 100vh;
       display: flex;
@@ -92,15 +90,6 @@
       text-align: center;
       padding: 120px 24px 80px;
       position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 70% 60% at 50% 40%, rgba(201,169,110,0.07) 0%, transparent 70%);
-      pointer-events: none;
     }
 
     .hero-eyebrow {
@@ -110,21 +99,15 @@
       text-transform: uppercase;
       color: var(--accent);
       margin-bottom: 28px;
-      animation: fadeUp 0.8s ease both;
     }
 
     .hero h1 {
-      font-family: 'Cormorant Garamond', serif;
       font-size: clamp(3rem, 8vw, 7rem);
       font-weight: 300;
-      line-height: 1.05;
-      letter-spacing: -0.01em;
       margin-bottom: 28px;
-      animation: fadeUp 0.9s 0.1s ease both;
     }
 
     .hero h1 em {
-      font-style: italic;
       color: var(--accent);
     }
 
@@ -133,7 +116,6 @@
       color: var(--muted);
       max-width: 560px;
       margin-bottom: 44px;
-      animation: fadeUp 1s 0.2s ease both;
     }
 
     .hero-actions {
@@ -141,11 +123,9 @@
       gap: 16px;
       flex-wrap: wrap;
       justify-content: center;
-      animation: fadeUp 1s 0.3s ease both;
     }
 
     .btn {
-      display: inline-block;
       padding: 14px 32px;
       font-family: 'Syne', sans-serif;
       font-size: 0.8rem;
@@ -153,8 +133,8 @@
       letter-spacing: 0.12em;
       text-transform: uppercase;
       border-radius: 2px;
-      transition: all 0.3s;
       cursor: pointer;
+      transition: 0.3s;
     }
 
     .btn-primary {
@@ -169,8 +149,6 @@
     }
 
     .btn-outline {
-      background: transparent;
-      color: var(--text);
       border: 1px solid var(--border);
     }
 
@@ -178,39 +156,16 @@
       border-color: var(--text);
     }
 
-    /* ── SECTION BASE ── */
     section {
       padding: 100px 48px;
       max-width: 1140px;
-      margin: 0 auto;
-    }
-
-    .section-label {
-      font-family: 'Syne', sans-serif;
-      font-size: 0.7rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 16px;
+      margin: auto;
     }
 
     h2 {
-      font-family: 'Cormorant Garamond', serif;
       font-size: clamp(2rem, 4vw, 3.5rem);
       font-weight: 300;
       margin-bottom: 20px;
-      line-height: 1.1;
-    }
-
-    /* ── SERVICES ── */
-    .services-intro {
-      max-width: 560px;
-      margin-bottom: 60px;
-    }
-
-    .services-intro p {
-      color: var(--muted);
-      font-size: 1.1rem;
     }
 
     .grid {
@@ -221,355 +176,86 @@
 
     .card {
       background: var(--surface);
-      padding: 40px 36px;
+      padding: 40px;
       border: 1px solid var(--border);
-      transition: border-color 0.3s, transform 0.3s;
-      position: relative;
-      overflow: hidden;
     }
 
-    .card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 3px;
-      height: 0;
-      background: var(--accent);
-      transition: height 0.4s ease;
-    }
-
-    .card:hover::before {
-      height: 100%;
-    }
-
-    .card:hover {
-      border-color: #333;
-      transform: translateY(-4px);
-    }
-
-    .card-num {
-      font-family: 'Syne', sans-serif;
-      font-size: 0.65rem;
-      letter-spacing: 0.2em;
-      color: var(--accent);
-      margin-bottom: 20px;
-      display: block;
-    }
-
-    .card h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.6rem;
-      font-weight: 400;
-      margin-bottom: 12px;
-    }
+    .card h3 { margin-bottom: 12px; }
 
     .card p {
       color: var(--muted);
-      font-size: 1rem;
-      line-height: 1.6;
     }
 
-    /* ── INSTAGRAM ── */
-    .instagram-section {
-      text-align: center;
-      padding: 60px 24px;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      max-width: 100%;
-    }
-
-    .instagram-section h2 {
-      margin-bottom: 40px;
-    }
-
-    .instagram-section iframe {
-      max-width: 100%;
-      border: none;
-    }
-
-    /* ── WHY ── */
-    .why {
-      text-align: center;
-      background: var(--surface);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      max-width: 100%;
-      padding: 80px 48px;
-    }
-
-    .why h2 {
-      max-width: 700px;
-      margin: 0 auto 20px;
-    }
-
-    .why p {
-      color: var(--muted);
-      font-size: 1.15rem;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    /* ── TESTIMONIALS ── */
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 28px;
-      margin-top: 48px;
-    }
-
-    .testimonial {
-      border: 1px solid var(--border);
-      padding: 32px 28px;
-      position: relative;
-      transition: border-color 0.3s;
-    }
-
-    .testimonial:hover {
-      border-color: var(--accent);
-    }
-
-    .testimonial::before {
-      content: '\201C';
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 5rem;
-      color: var(--accent);
-      opacity: 0.25;
-      position: absolute;
-      top: 8px;
-      left: 20px;
-      line-height: 1;
-    }
-
-    .testimonial p {
-      font-style: italic;
-      color: #ccc;
-      font-size: 1.05rem;
-      line-height: 1.7;
-      padding-top: 20px;
-    }
-
-    .testimonial strong {
-      display: block;
-      margin-top: 20px;
-      font-family: 'Syne', sans-serif;
-      font-size: 0.75rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--accent);
-      font-style: normal;
-    }
-
-    /* ── FAQ ── */
-    .faq-list {
-      margin-top: 48px;
-      border-top: 1px solid var(--border);
-    }
-
-    .faq-item {
-      border-bottom: 1px solid var(--border);
-      padding: 28px 0;
-    }
-
-    .faq-item h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.35rem;
-      font-weight: 400;
-      margin-bottom: 10px;
-    }
-
-    .faq-item p {
-      color: var(--muted);
-      font-size: 1rem;
-      max-width: 680px;
-    }
-
-    /* ── CTA ── */
     .cta {
       text-align: center;
       padding: 100px 24px;
       border-top: 1px solid var(--border);
-      max-width: 100%;
-      position: relative;
-      overflow: hidden;
     }
 
-    .cta::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 60% 80% at 50% 100%, rgba(201,169,110,0.06) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .cta h2 {
-      font-size: clamp(2.2rem, 5vw, 4.5rem);
-      max-width: 700px;
-      margin: 0 auto 20px;
-    }
-
-    .cta p {
-      color: var(--muted);
-      font-size: 1.15rem;
-      margin-bottom: 40px;
-    }
-
-    /* ── FOOTER ── */
     footer {
       text-align: center;
       padding: 28px;
-      font-family: 'Syne', sans-serif;
       font-size: 0.75rem;
-      letter-spacing: 0.1em;
       color: #333;
       border-top: 1px solid var(--border);
     }
 
-    /* ── ANIMATIONS ── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
-      nav {
-        padding: 18px 24px;
-      }
-
-      .nav-links {
-        display: none;
-      }
-
-      section {
-        padding: 70px 24px;
-      }
-
-      .why, .cta {
-        padding: 70px 24px;
-      }
+      .nav-links { display: none; }
+      section { padding: 70px 24px; }
     }
   </style>
 </head>
+
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <span class="nav-logo">SAMA Style Media</span>
-    <ul class="nav-links">
-      <li><a href="#services">Services</a></li>
-      <li><a href="#work">Work</a></li>
-      <li><a href="#testimonials">Clients</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+<nav>
+  <span class="nav-logo">SAMA Style Media</span>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#testimonials">Clients</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 
-  <!-- HERO -->
-  <div class="hero">
-    <p class="hero-eyebrow">Visual Storytelling &amp; Creative Direction</p>
-    <h1>Make Every Frame <em>Matter</em></h1>
-    <p>Photography, videography, and creative direction crafted to elevate your brand and capture what words can't.</p>
-    <div class="hero-actions">
-      <a href="#contact" class="btn btn-primary">Book a Session</a>
-      <a href="#services" class="btn btn-outline">Explore Services</a>
+<div class="hero">
+  <p class="hero-eyebrow">Visual Storytelling & Creative Direction</p>
+  <h1>Make Every Frame <em>Matter</em></h1>
+  <p>Photography, videography, and creative direction crafted to elevate your brand.</p>
+  <div class="hero-actions">
+    <a href="#contact" class="btn btn-primary">Book a Session</a>
+    <a href="#services" class="btn btn-outline">Explore Services</a>
+  </div>
+</div>
+
+<section id="services">
+  <h2>Services</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Photography</h3>
+      <p>Portraits, lifestyle, and branding content.</p>
+    </div>
+    <div class="card">
+      <h3>Videography</h3>
+      <p>High-quality video production.</p>
+    </div>
+    <div class="card">
+      <h3>Creative Direction</h3>
+      <p>Concept and storytelling to elevate your brand.</p>
     </div>
   </div>
+</section>
 
-  <!-- SERVICES -->
-  <section id="services">
-    <div class="services-intro">
-      <p class="section-label">What We Do</p>
-      <h2>Services</h2>
-      <p>From concept to final cut — we handle every visual touchpoint for your brand.</p>
-    </div>
-    <div class="grid">
-      <div class="card">
-        <span class="card-num">01</span>
-        <h3>Photography</h3>
-        <p>Portraits, lifestyle, and branding content that makes your visuals stand out in any feed or campaign.</p>
-      </div>
-      <div class="card">
-        <span class="card-num">02</span>
-        <h3>Videography</h3>
-        <p>High-quality video production for events, social media, promotions, and beyond.</p>
-      </div>
-      <div class="card">
-        <span class="card-num">03</span>
-        <h3>Creative Direction</h3>
-        <p>Concept development, styling, and storytelling to elevate your brand identity from the ground up.</p>
-      </div>
-    </div>
-  </section>
+<div class="cta" id="contact">
+  <h2>Let's Create Something Powerful</h2>
+  <p>Ready to elevate your visuals? Let's talk.</p>
+  <a href="mailto:youremail@example.com" class="btn btn-primary">Contact Now</a>
+</div>
 
-  <!-- INSTAGRAM FEED -->
-  <div class="instagram-section" id="work">
-    <p class="section-label">Portfolio</p>
-    <h2>Our Latest Work</h2>
-    <a href="https://www.instagram.com/samastylemedia" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="margin-top: 16px;">@samastylemedia on Instagram</a>
-  </div>
+<footer>
+  &copy; 2026 SAMA Style Media. All rights reserved.
+</footer>
 
-  <!-- WHY CHOOSE US -->
-  <div class="why">
-    <p class="section-label">Our Difference</p>
-    <h2>Why Choose Us</h2>
-    <p>We combine creativity, precision, and storytelling to deliver visuals that connect, resonate, and convert.</p>
-  </div>
-
-  <!-- TESTIMONIALS -->
-  <section id="testimonials">
-    <p class="section-label">Client Voices</p>
-    <h2>What Clients Say</h2>
-    <div class="testimonials-grid">
-      <div class="testimonial">
-        <p>I chose Sama Style Media for the fact he cares about the quality… overall experience matters.</p>
-        <strong>— Nysah K.</strong>
-      </div>
-      <div class="testimonial">
-        <p>I've worked with SamaStyleMedia on multiple occasions… nothing but professionalism and would 100% recommend them.</p>
-        <strong>— Benjamin R.</strong>
-      </div>
-      <div class="testimonial">
-        <p>With Sama, every moment is captured with care, leaving every event with plenty of memories and amazing shots.</p>
-        <strong>— Corey D.</strong>
-      </div>
-      <div class="testimonial">
-        <p>Very professional and work quality exceeds expectations!</p>
-        <strong>— Percy P.</strong>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section>
-    <p class="section-label">Common Questions</p>
-    <h2>FAQ</h2>
-    <div class="faq-list">
-      <div class="faq-item">
-        <h3>How do I book?</h3>
-        <p>Use the contact section below to reach out and schedule a session. We'll get back to you promptly.</p>
-      </div>
-      <div class="faq-item">
-        <h3>Do you travel?</h3>
-        <p>Yes, travel is available depending on the project location. Reach out to discuss details.</p>
-      </div>
-      <div class="faq-item">
-        <h3>What types of projects do you take on?</h3>
-        <p>We work on portraits, brand shoots, events, social content, promos, and full creative campaigns.</p>
-      </div>
-      <div class="faq-item">
-        <h3>How long until I receive my photos or footage?</h3>
-        <p>Turnaround times vary by project scope. We'll give you a clear timeline before we begin.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <div class="cta" id="contact">
-    <p class="section-label">Get Started</p>
-    <h2>Let's Create Something Powerful</h2>
-    <p>Ready to elevate your visuals? Let's talk.</p>
-    <a href="/cdn-cgi/l/email-protection#bac3d5cfc8dfd7dbd3d6fadfc2dbd7cad6df94d9d5d7" class="btn btn-primary">Contact Now</a>
-  </div>
-
-  <footer>
-    &copy; 2026 SAMA Style Media. All rights reservered.
+</body>
+</html>

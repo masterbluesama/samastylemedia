@@ -267,6 +267,32 @@
       border-top: 1px solid var(--border);
     }
 
+    /* QR SECTION */
+    .qr-section {
+      text-align: center;
+      padding: 100px 48px;
+      border-top: 1px solid var(--border);
+      max-width: 1140px;
+      margin: auto;
+    }
+    .qr-section h2 { margin-bottom: 16px; }
+    .qr-section .pricing-intro { margin: 0 auto 48px; }
+    .qr-wrap {
+      display: inline-block;
+      padding: 24px;
+      background: #fff;
+      border-radius: 4px;
+      margin-bottom: 28px;
+    }
+    .qr-wrap canvas { display: block; }
+    .qr-label {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
     @media (max-width: 768px) {
       nav { padding: 18px 24px; }
       .nav-links { display: none; }
@@ -283,6 +309,7 @@
     <li><a href="#services">Services</a></li>
     <li><a href="#book">Book</a></li>
     <li><a href="#contact">Contact</a></li>
+    <li><a href="#qr">Scan</a></li>
   </ul>
 </nav>
 
@@ -389,5 +416,28 @@
   <a href="https://docs.google.com/forms/d/e/1FAIpQLSd8s9yt_YfatYZGfHjIQU8epMqm4P4M28pkm9Svyz7DSXfIEw/viewform?usp=publish-editor" class="btn btn-primary" target="_blank" rel="noopener">Get in Touch</a>
 </div>
 
+<!-- QR CODE -->
+<div class="qr-section" id="qr">
+  <h2>Scan to Visit</h2>
+  <p class="pricing-intro">Share this QR code on business cards, flyers, or anywhere — it links straight to this site.</p>
+  <div class="qr-wrap">
+    <canvas id="qr-canvas"></canvas>
+  </div>
+  <br>
+  <p class="qr-label">masterbluesama.github.io/samastylemedia</p>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+  new QRCode(document.getElementById("qr-canvas"), {
+    text: "https://masterbluesama.github.io/samastylemedia/",
+    width: 200,
+    height: 200,
+    colorDark: "#000000",
+    colorLight: "#ffffff",
+    correctLevel: QRCode.CorrectLevel.H
+  });
+</script>
+
 <footer>
-  &copy; 2026 SAMA Style Media. All 
+  &copy; 2026 SAMA Style Media. All
